@@ -1,1 +1,1 @@
-# COMP1073F
+# COMP1073 Client Side JavaScript
