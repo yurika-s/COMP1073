@@ -5,22 +5,32 @@
 - randomize for the button
 - story for the paragraph that outputs the final story
 */
+let customName = document.getElementById('customname');
+let randomize = document.querySelector('.randomize');
+let story = document.querySelector('.story');
 
-/* STEP 3: Create the variable that contains the story string that will be modified - use var storyText to containt the following:
-'It was 94 farenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but he was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
-*/
+/* STEP 3: Create the variable that contains the story string that will be modified - use var storyText to containt the following: */
+let storyText =
+  'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but he was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
 
 /* STEP 4: Create three arrays, insertX, insertY, and insertZ, assigning them the following array values respectively:
 Donald Trump, Jackie Chan, Santa Claus
 Area 51, Death Valley, Aruba
 spontaneously combusted, rapidly sublimated, evaporated instantly
 */
+let insertX = ['Donald Trump', 'Jackie Chan', 'Santa Claus'];
+let insertY = ['Area 51', 'Death Valley', 'Aruba'];
+let insertZ = [
+  'spontaneously combusted',
+  'rapidly sublimated',
+  'evaporated instantly',
+];
 
 // FUNCTIONS
 
 /* STEP 2: have a look at the following function - if you call this function and pass it an array, it will return one of the elements of that array randomly */
-function randomValueFromArray(array){
-	return array[Math.floor(Math.random()*array.length)];
+function randomValueFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 /* STEP 6: Review the partially complete result() function below */
