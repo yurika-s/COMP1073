@@ -1,0 +1,23 @@
+body {
+    width: 80%;
+    margin: 0 auto;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  section:nth-child(1) {
+    text-align: center;
+  }
+  section:nth-child(2) > div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  section:nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
