@@ -1,6 +1,5 @@
-// grab button and p elements
+// grab elements
 const storyParagraph = document.querySelector('#story');
-const showStoryBtn = document.querySelector('#showStoryBtn');
 const wordSelectButtons = []; // array to store word select button elements
 for (i = 1; i < 6; i++) {
   wordSelectButtons.push(
@@ -9,6 +8,10 @@ for (i = 1; i < 6; i++) {
     )
   );
 }
+// for modal
+const showStoryBtn = document.querySelector('#showStoryBtn');
+const modal = document.querySelector('.js-modal');
+const closeModalBtn = document.querySelector('#closeModalBtn');
 
 // declare array for words in each category
 const wordChoice = [
@@ -30,7 +33,7 @@ let selectedWordIndexes = [-1, -1, -1, -1, -1];
 // add click event to each word select button
 for (const [i, button] of Object.entries(wordSelectButtons)) {
   wordSelectButtons[i].addEventListener('click', () => {
-    idx = Number(i);
+    let idx = Number(i);
 
     // if the user hits the button when the last word in the list is selected,
     if (selectedWordIndexes[idx] === 4) {
@@ -63,5 +66,18 @@ const showStory = () => {
   }
   storyParagraph.textContent = story;
 };
-// add click event to the story showing button
+
+// function to open the modal
+const modalOpen = () => {
+  modal.classList.add('active');
+};
+
+const modalClose = () => {
+  modal.classList.remove('active');
+};
+
+// add click event to buttons
 showStoryBtn.addEventListener('click', showStory);
+showStoryBtn.addEventListener('click', modalOpen);
+closeModalBtn.addEventListener('click', modalClose);
+
