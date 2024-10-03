@@ -1,23 +1,183 @@
+/* common style */
+* {
+  margin: 0;
+}
+
 body {
-    width: 80%;
-    margin: 0 auto;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  section:nth-child(1) {
-    text-align: center;
-  }
-  section:nth-child(2) > div {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  }
-  
-  section:nth-child(2) > div > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: sans-serif;
+}
+h1 {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+/* the first section */
+section:nth-child(1) {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+section:nth-child(1) button {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border: 0;
+  background-color: #ee7777;
+  box-shadow: 0 3px #773a3a;
+}
+section:nth-child(1) p {
+  display: none;
+  color: #ff0000;
+}
+section:nth-child(1) p.error {
+  display: block;
+}
+
+/* 
+** the second section
+ */
+section:nth-child(2) > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+/* category area */
+section:nth-child(2) > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+section:nth-child(2) > div > div:nth-child(1) {
+  border-radius: 1rem;
+  background-color: #b47ee7;
+}
+section:nth-child(2) > div > div:nth-child(2) {
+  border-radius: 1rem;
+  background-color: #7294f1;
+}
+section:nth-child(2) > div > div:nth-child(3) {
+  border-radius: 1rem;
+  background-color: #82de8c;
+}
+section:nth-child(2) > div > div:nth-child(4) {
+  border-radius: 1rem;
+  background-color: #e0a859;
+}
+section:nth-child(2) > div > div:nth-child(5) {
+  border-radius: 1rem;
+  background-color: #f086d9;
+}
+
+/* button */
+section:nth-child(2) > div > div button {
+  border: 3px solid #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+section:nth-child(2) > div > div:nth-child(1) button {
+  background-color: #b47ee7;
+  box-shadow: 0 3px #553b6d;
+  color: #382648;
+}
+section:nth-child(2) > div > div:nth-child(2) button {
+  background-color: #7294f1;
+  box-shadow: 0 3px #313f68;
+  color: #1a2544;
+}
+section:nth-child(2) > div > div:nth-child(3) button {
+  background-color: #82de8c;
+  box-shadow: 0 3px #406f45;
+  color: #214a25;
+}
+section:nth-child(2) > div > div:nth-child(4) button {
+  background-color: #e0a859;
+  box-shadow: 0 3px #614826;
+  color: #503817;
+}
+section:nth-child(2) > div > div:nth-child(5) button {
+  background-color: #f086d9;
+  box-shadow: 0 3px #64375a;
+  color: #4f2546;
+}
+
+section:nth-child(2) > div > div p {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* modal and background layer */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 70%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: -0.2em;
+}
+
+/* for the modal that is open */
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 80%;
+  /* width: 90%; */
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2em;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-content {
+  background: #fff;
+  text-align: left;
+  line-height: 1.8;
+  padding: 3rem 4rem;
+  border-radius: 2rem;
+  background-color: #ee7777;
+  color: #fff;
+  font-size: 2em;
+}

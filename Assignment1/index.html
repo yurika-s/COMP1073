@@ -10,15 +10,18 @@
   <body>
     <section>
       <h1>Story Maker</h1>
-      <button id="showStoryBtn">Make a Story!</button>
-      <div><p id="story">Generated Story Here!</p></div>
+      <div><img src="./img/title.png" alt="title image" /></div>
+      <button id="showStoryBtn" class="modal-open js-modal-open">
+        Make a Story!
+      </button>
+      <p>Please select one word from each category</p>
     </section>
 
     <section>
       <div>
         <div>
-          <h3>Subject</h3>
-          <button>1</button>
+          <h3>1: Subject</h3>
+          <button>Select a word</button>
           <p>Selected: <span></span></p>
           <ul>
             <li>The turkey</li>
@@ -29,8 +32,8 @@
           </ul>
         </div>
         <div>
-          <h3>Action</h3>
-          <button>2</button>
+          <h3>2: Action</h3>
+          <button>Select a word</button>
           <p>Selected: <span></span></p>
           <ul>
             <li>sat on</li>
@@ -41,8 +44,8 @@
           </ul>
         </div>
         <div>
-          <h3>Adjective</h3>
-          <button>3</button>
+          <h3>3: Adjective</h3>
+          <button>Select a word</button>
           <p>Selected: <span></span></p>
           <ul>
             <li>a funny</li>
@@ -53,8 +56,8 @@
           </ul>
         </div>
         <div>
-          <h3>Object</h3>
-          <button>4</button>
+          <h3>4: Object</h3>
+          <button>Select a word</button>
           <p>Selected: <span></span></p>
           <ul>
             <li>goat</li>
@@ -65,8 +68,8 @@
           </ul>
         </div>
         <div>
-          <h3>Location</h3>
-          <button>5</button>
+          <h3>5: Location</h3>
+          <button>Select a word</button>
           <p>Selected: <span></span></p>
           <ul>
             <li>on the moon</li>
@@ -78,5 +81,16 @@
         </div>
       </div>
     </section>
+
+    <!-- the modal to show the story users created -->
+    <div class="modal js-modal">
+      <div class="modal-container">
+        <div id="closeModalBtn" class="modal-close">×</div>
+        <div class="modal-content">
+          <p id="story"></p>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
