@@ -1,5 +1,6 @@
 // grab elements
 const storyParagraph = document.querySelector('#story');
+const errorMessage = document.querySelector('section:nth-child(1) p');
 const wordSelectButtons = []; // array to store word select button elements
 for (i = 1; i < 6; i++) {
   wordSelectButtons.push(
@@ -55,8 +56,13 @@ for (const [i, button] of Object.entries(wordSelectButtons)) {
 // function to show completed story sentence
 const showStory = () => {
   let story = '';
+  let isError = false;
   // combine selected words in each category and display it
   for (i = 0; i < selectedWordIndexes.length; i++) {
+    if (selectedWordIndexes[i] === -1) {
+      isError = true;
+      break;
+    }
     story += wordChoice[i][selectedWordIndexes[i]];
     if (i !== selectedWordIndexes.length - 1) {
       story += ' ';
@@ -64,20 +70,21 @@ const showStory = () => {
       story += '.';
     }
   }
-  storyParagraph.textContent = story;
+  if (isError) {
+    errorMessage.classList.add('error');
+  } else {
+    storyParagraph.textContent = story;
+    modal.classList.add('active');
+    errorMessage.classList.remove('error');
+  }
 };
 
-// function to open the modal
-const modalOpen = () => {
-  modal.classList.add('active');
-};
-
+// function to close the modal
 const modalClose = () => {
   modal.classList.remove('active');
 };
 
 // add click event to buttons
 showStoryBtn.addEventListener('click', showStory);
-showStoryBtn.addEventListener('click', modalOpen);
 closeModalBtn.addEventListener('click', modalClose);
 
