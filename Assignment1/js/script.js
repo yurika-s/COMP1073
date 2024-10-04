@@ -10,9 +10,12 @@ for (i = 1; i < 6; i++) {
   );
 }
 // for modal
+const modal = document.querySelector('#storyModal');
+// buttons
 const showStoryBtn = document.querySelector('#showStoryBtn');
-const modal = document.querySelector('.js-modal');
 const closeModalBtn = document.querySelector('#closeModalBtn');
+const randomBtn = document.querySelector('#randomBtn');
+const resetBtn = document.querySelector('#resetBtn');
 
 // declare array for words in each category
 const wordChoice = [
@@ -35,7 +38,6 @@ let selectedWordIndexes = [-1, -1, -1, -1, -1];
 for (const [i, button] of Object.entries(wordSelectButtons)) {
   wordSelectButtons[i].addEventListener('click', () => {
     let idx = Number(i);
-
     // if the user hits the button when the last word in the list is selected,
     if (selectedWordIndexes[idx] === 4) {
       // change the index to -1 to show the first word
@@ -79,6 +81,31 @@ const showStory = () => {
   }
 };
 
+// function to generate a random story
+const generateRandomStory = () => {
+  // generate 5 random numbers and add them to selectedWordIndexes array in each item
+  for (i = 0; i < 5; i++) {
+    selectedWordIndexes[i] = Math.floor(Math.random() * 4);
+  }
+  showStory();
+};
+
+// function to reset a story
+const resetStory = () => {
+  // reset the index array
+  for (i = 0; i < 5; i++) {
+    selectedWordIndexes[i] = -1;
+  }
+  // grab the span element
+  for (num = 1; num < 6; num++) {
+    const span = document.querySelector(
+      `section:nth-child(2) > div > div:nth-child(${num}) p span`
+    );
+    // empty the span text
+    span.textContent = '';
+  }
+};
+
 // function to close the modal
 const modalClose = () => {
   modal.classList.remove('active');
@@ -86,5 +113,7 @@ const modalClose = () => {
 
 // add click event to buttons
 showStoryBtn.addEventListener('click', showStory);
+randomBtn.addEventListener('click', generateRandomStory);
+resetBtn.addEventListener('click', resetStory);
 closeModalBtn.addEventListener('click', modalClose);
 

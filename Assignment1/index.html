@@ -11,9 +11,9 @@
     <section>
       <h1>Story Maker</h1>
       <div><img src="./img/title.png" alt="title image" /></div>
-      <button id="showStoryBtn" class="modal-open js-modal-open">
-        Make a Story!
-      </button>
+      <button id="showStoryBtn" class="modal-open">Make a Story!</button>
+      <button id="randomBtn" class="modal-open">Generate Random Story!</button>
+      <button id="resetBtn">Reset</button>
       <p>Please select one word from each category</p>
     </section>
 
@@ -83,7 +83,7 @@
     </section>
 
     <!-- the modal to show the story users created -->
-    <div class="modal js-modal">
+    <div id="storyModal" class="modal">
       <div class="modal-container">
         <div id="closeModalBtn" class="modal-close">×</div>
         <div class="modal-content">
