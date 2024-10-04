@@ -19,20 +19,27 @@ const resetBtn = document.querySelector('#resetBtn');
 
 // declare array for words in each category
 const wordChoice = [
-  ['The turkey', 'Mom', 'Dad', 'The dog', 'My teacher'],
-  ['sat on', 'ate', 'danced with', 'saw', `doesn't like`],
-  ['a funny', 'a scary', 'a goofy', 'a slimy', 'a barking'],
-  ['goat', 'monkey', 'fish', 'cow', 'flog'],
+  ['The man', 'The lady', 'My friend', 'The monkey', 'The android'],
   [
-    'on the moon',
-    'on the chair',
-    'in my spaghetti',
-    'in my soup',
-    'on the grass',
+    'in the car',
+    'with long hair',
+    'wearing glasses',
+    'with a smile',
+    `on the street`,
+  ],
+  ['always', 'often', 'usually', 'sometimes', 'seldom'],
+  ['takes a walk', 'runs', 'eats bananas', 'looks happy', 'speaks'],
+  [
+    'in the morning',
+    'in the afternoon',
+    'in the evening',
+    'at night',
+    'whole day',
   ],
 ];
 // declare array for indexes that the user selected in each list
 let selectedWordIndexes = [-1, -1, -1, -1, -1];
+let story = '';
 
 // add click event to each word select button
 for (const [i, button] of Object.entries(wordSelectButtons)) {
@@ -57,7 +64,6 @@ for (const [i, button] of Object.entries(wordSelectButtons)) {
 
 // function to show completed story sentence
 const showStory = () => {
-  let story = '';
   let isError = false;
   // combine selected words in each category and display it
   for (i = 0; i < selectedWordIndexes.length; i++) {
@@ -88,6 +94,8 @@ const generateRandomStory = () => {
     selectedWordIndexes[i] = Math.floor(Math.random() * 4);
   }
   showStory();
+  const utterance = new SpeechSynthesisUtterance(story);
+  speechSynthesis.speak(utterance);
 };
 
 // function to reset a story
@@ -104,6 +112,8 @@ const resetStory = () => {
     // empty the span text
     span.textContent = '';
   }
+  // set story valuable to empty text
+  story = '';
 };
 
 // function to close the modal
@@ -116,4 +126,3 @@ showStoryBtn.addEventListener('click', showStory);
 randomBtn.addEventListener('click', generateRandomStory);
 resetBtn.addEventListener('click', resetStory);
 closeModalBtn.addEventListener('click', modalClose);
-
