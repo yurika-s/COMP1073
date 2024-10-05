@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1 | Story Maker</title>
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <section>
+      <h1>Story Maker</h1>
+      <div><img src="./img/title.png" alt="title image" /></div>
+      <button id="showStoryBtn" class="modal-open">Show your Story!</button>
+      <button id="randomBtn" class="modal-open">Generate Random Story!</button>
+      <button id="resetBtn">Reset</button>
+      <p>Please select one word from each category</p>
+    </section>
+
+    <!-- word selection area -->
+    <section>
+      <div>
+        <div>
+          <h3>1: Subject</h3>
+          <button>Select a word</button>
+          <p>Selected: <br /><span></span></p>
+          <ul>
+            <li><span>>> </span>The man</li>
+            <li><span>>> </span>The lady</li>
+            <li><span>>> </span>My friend</li>
+            <li><span>>> </span>The monkey</li>
+            <li><span>>> </span>The android</li>
+          </ul>
+        </div>
+        <div>
+          <h3>2: Feature</h3>
+          <button>Select a word</button>
+          <p>Selected: <br /><span></span></p>
+          <ul>
+            <li><span>>> </span>in the car</li>
+            <li><span>>> </span>with long hair</li>
+            <li><span>>> </span>wearing glasses</li>
+            <li><span>>> </span>with a smile</li>
+            <li><span>>> </span>on the street</li>
+          </ul>
+        </div>
+        <div>
+          <h3>3: Frequency</h3>
+          <button>Select a word</button>
+          <p>Selected: <br /><span></span></p>
+          <ul>
+            <li><span>>> </span>always</li>
+            <li><span>>> </span>often</li>
+            <li><span>>> </span>usually</li>
+            <li><span>>> </span>sometimes</li>
+            <li><span>>> </span>seldom</li>
+          </ul>
+        </div>
+        <div>
+          <h3>4: Action</h3>
+          <button>Select a word</button>
+          <p>Selected: <br /><span></span></p>
+          <ul>
+            <li><span>>> </span>takes a walk</li>
+            <li><span>>> </span>runs</li>
+            <li><span>>> </span>eats bananas</li>
+            <li><span>>> </span>looks happy</li>
+            <li><span>>> </span>speaks</li>
+          </ul>
+        </div>
+        <div>
+          <h3>5: Time</h3>
+          <button>Select a word</button>
+          <p>Selected: <br /><span></span></p>
+          <ul>
+            <li><span>>> </span>in the morning</li>
+            <li><span>>> </span>in the afternoon</li>
+            <li><span>>> </span>in the evening</li>
+            <li><span>>> </span>at night</li>
+            <li><span>>> </span>whole day</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- the modal to show the story users created -->
+    <div id="storyModal" class="modal">
+      <div class="modal-container">
+        <div id="closeModalBtn" class="modal-close">×</div>
+        <div class="modal-content">
+          <p id="story"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
