@@ -130,10 +130,21 @@ section:nth-child(2) > div > div:nth-child(5) button {
   color: #4f2546;
 }
 
-/* p tag showing selected words */
+/* p and span tags showing current selected words */
 section:nth-child(2) > div > div p {
   color: #fff;
   margin-bottom: 1rem;
+}
+section:nth-child(2) > div > div p span {
+  text-decoration: underline;
+}
+
+/* arrows showing current selected words */
+section:nth-child(2) > div > div ul span {
+  visibility: hidden;
+}
+section:nth-child(2) > div > div ul span.selected {
+  visibility: visible;
 }
 
 /* modal and background layer */
