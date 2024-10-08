@@ -2,5 +2,8 @@
 ## Lab 1
 Random Story Generator
 
+## Lab 2
+Simple interface with RGB sliders to change the background colour
+
 ## Assignment 1
 Story Maker
