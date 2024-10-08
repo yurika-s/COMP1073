@@ -24,3 +24,10 @@ const changeBgColor = () => {
   }
 };
 
+// add event actions to each slider elements
+for (const [i, element] of Object.entries(sliderElements)) {
+  element.addEventListener('change', (e) => {
+    setRGBValue(i, e.target);
+    changeBgColor();
+  });
+}
