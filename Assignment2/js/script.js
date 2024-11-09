@@ -1,9 +1,14 @@
 // Smoothie Class
 class Smoothie {
-  constructor(size, base, ingredients) {
+  size;
+  base;
+  ingredient;
+  adds;
+  constructor(size, base, ingredient, adds) {
     this.size = size;
     this.base = base;
-    this.ingredients = ingredients;
+    this.ingredient = ingredient;
+    this.adds = adds;
   }
 
   serveIt() {
@@ -12,7 +17,8 @@ class Smoothie {
       <h2>Your Order</h2>
       <p>Size: ${this.size}</p>
       <p>Base: ${this.base}</p>
-      <p>Ingredients: ${this.ingredients.join(', ')}</p>
+      <p>Ingredient: ${this.ingredient}</p>
+      <p>Adds: ${this.adds.join(', ')}</p>
     `;
     output.innerHTML = description;
   }
@@ -22,18 +28,19 @@ class Smoothie {
 const orderSmoothie = () => {
   const size = document.querySelector('#size').value;
   const base = document.querySelector('#base').value;
-  // the array to store ingredient values
-  let ingredients = [];
+  const ingredient = document.querySelector('#ingredient').value;
+  // the array to store add item values
+  let adds = [];
   // retrieve checkbox elements that user checked
   const checkedElements = document.querySelectorAll(
     'input[type="checkbox"]:checked'
   );
   // add ingredients value to the array
   checkedElements.forEach((el) => {
-    ingredients.push(el.value);
+    adds.push(el.value);
   });
   // create a new smoothie instance
-  const smoothie = new Smoothie(size, base, ingredients);
+  const smoothie = new Smoothie(size, base, ingredient, adds);
   smoothie.serveIt();
 };
 
