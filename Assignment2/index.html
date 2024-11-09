@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2 | The Smoothie Machine</title>
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Order Your Smoothie</h1>
+    <!-- Smoothie Order Form to select size/base/ingredients -->
+    <form>
+      <label for="size">Size:</label>
+      <select id="size" name="size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <br />
+
+      <label for="base">Base:</label>
+      <select id="base" name="base">
+        <option value="water">Water</option>
+        <option value="almond_milk">Almond Milk</option>
+        <option value="soy_milk">Soy Milk</option>
+        <option value="coconut_water">Coconut Water</option>
+        <option value="yogurt">Yogurt</option>
+      </select>
+      <br />
+
+      <label>Ingredients:</label>
+
+      <label>
+        <input type="checkbox" name="ingredients" value="banana" />Banana
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="ingredients"
+          value="strawberry"
+        />Strawberry
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="blueberry" />Blueberry
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="mango" />Mango
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="spinach" />Spinach
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="kale" />Kale
+      </label>
+      <br />
+      <!-- Order button -->
+      <button type="button" id="orderBtn">Order Smoothie</button>
+    </form>
+
+    <!-- showing user's order here -->
+    <div id="output"></div>
+  </body>
+</html>
