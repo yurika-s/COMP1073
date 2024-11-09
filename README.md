@@ -2,6 +2,9 @@
 ## Assignment 1
 Story Maker
 
+## Assignment 2
+The Smoothie Machine
+
 ## Lab 1
 Random Story Generator
 
