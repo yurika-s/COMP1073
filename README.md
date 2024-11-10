@@ -4,7 +4,8 @@ Story Maker
 URL: https://lamp.computerstudi.es/~Yurika200558167/COMP1073/Assignment1/
 
 ## Assignment 2
-The Smoothie Machine
+The Smoothie Machine  
+URL: https://lamp.computerstudi.es/~Yurika200558167/COMP1073/Assignment2/
 
 ## Lab 1
 Random Story Generator
