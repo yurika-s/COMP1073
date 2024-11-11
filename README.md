@@ -13,3 +13,5 @@ Random Story Generator
 ## Lab 2
 Simple interface with RGB sliders to change the background colour
 
+## Lab 3
+Toy car
