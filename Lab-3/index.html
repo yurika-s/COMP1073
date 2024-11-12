@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3 | Toy Car</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1></h1>
+      <div>
+        <div>
+          <img
+            id="productImage"
+            src="./images/noimagepng.png"
+            alt="image of the toy car"
+          />
+        </div>
+        <div class="car-info">
+          <p class="price"></p>
+          <div class="stars"></div>
+          <div class="details"></div>
+        </div>
+        <div class="review-title">
+          <span>Reviews</span>
+          <button type="button" class="postReviewBtn">Post a Review</button>
+        </div>
+        <form class="hidden" action="">
+          <div>
+            <label for="reviewer">Reviewer's Name: </label>
+            <input type="text" name="reviewer" id="reviewer" />
+          </div>
+          <div>
+            <label for="reviewStars">Stars: </label>
+            <select name="reviewStars" id="reviewStars">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div>
+            <label for="reviewTitle">Title: </label>
+            <input type="text" name="reviewTitle" id="reviewTitle" />
+          </div>
+          <label for="comment">Comment: </label>
+          <div>
+            <textarea
+              name="comment"
+              id="comment"
+              rows="5"
+              placeholder="Please write your review here!"
+            ></textarea>
+          </div>
+          <button type="button" class="SubmitBtn">Submit</button>
+        </form>
+        <div class="reviews"></div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
