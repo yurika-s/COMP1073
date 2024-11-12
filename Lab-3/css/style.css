@@ -1,0 +1,136 @@
+/* common */
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #185208;
+  font-size: 2em;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+form {
+  padding: 1rem 0;
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+input {
+  width: 30%;
+}
+
+input,
+select {
+  padding: 0.3rem;
+}
+
+textarea {
+  width: 80%;
+  margin-top: 0.3rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.price {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.details span {
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.show {
+  opacity: 1;
+  display: block;
+  transition: 0.5s;
+}
+
+/* car info */
+.car-info svg {
+  height: 30px;
+}
+.star-points {
+  margin-left: 0.5rem;
+  color: rgb(254, 136, 0);
+}
+.car-info .star-points {
+  font-size: 1.8em;
+}
+
+/* reviews area */
+.review-title {
+  border-bottom: solid 3px #185208;
+  padding: 1rem 0;
+}
+.review-title > span {
+  color: #185208;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.postReviewBtn {
+  margin-left: 1rem;
+}
+
+.reviews > div,
+form {
+  border-bottom: #ddd 2px solid;
+}
+
+.reviews > div {
+  padding: 1rem;
+}
+
+.reviews > div:last-child {
+  border-bottom: 0;
+}
+
+form > div {
+  margin-bottom: 0.5rem;
+}
+
+.reviews p {
+  margin: 0 0 0.5em 0;
+}
+.reviews svg {
+  height: 20px;
+}
+
+.reviews .small {
+  font-size: 0.8em;
+  color: #a7a3a3;
+  margin-bottom: 0.3rem;
+}
+
+.reviews p:last-child {
+  margin-top: 0.3rem;
+}
