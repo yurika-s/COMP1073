@@ -25,6 +25,28 @@
         "clover honey"
       ],
       "image" : "peach-mango.svg"
+    },
+    {
+      "name" : "Lush Lime Lullaby",
+      "calories" : 360,
+      "type" : "sorbet",
+      "ingredients" : [
+        "fresh lime juice",
+        "mint leaves",
+        "agave syrup"
+      ],
+      "image" : "ice-cream-xtra1.svg"
+    },
+    {
+      "name" : "Vanilla Cocoa Cascade",
+      "calories" : 380,
+      "type" : "ice cream",
+      "ingredients" : [
+        "vanilla bean paste",
+        "cacao chips",
+        "heavy cream"
+      ],
+      "image" : "ice-cream-xtra2.svg"
     }
   ]
 }
