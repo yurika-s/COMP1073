@@ -69,7 +69,7 @@ function showTopFlavors(jsonObj) {
       h3.textContent = flavors[i].name;
       image.setAttribute(
         'src',
-        'https://yurika-s.github.io/COMP1073/lesson-10/images/' + flavors[i].image
+        'https://yurika-s.github.io/COMP1073/Lab-4/images/' + flavors[i].image
       );
       // add calories to p element and class to change its text color to red if the calories is less than 400
       p.textContent = 'Calories: ';
