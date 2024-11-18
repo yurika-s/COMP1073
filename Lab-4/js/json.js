@@ -49,7 +49,7 @@ function showTopFlavors(jsonObj) {
     h2.textContent = topFlavors[i].name;
     image.setAttribute(
       'src',
-      'https://yurika-s.github.io/COMP1073/lesson-10/images/' +
+      'https://yurika-s.github.io/COMP1073/Lab-4/images/' +
         topFlavors[i].image
     );
     // STEP 10g: Build a loop for the ingredients array in the JSON
