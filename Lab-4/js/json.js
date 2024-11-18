@@ -1,6 +1,6 @@
 /* STEP 2: Reference the HEADER and the SECTION elements with variables */
 const header = document.querySelector('header');
-const section = document.querySelector('section');
+const div = document.querySelector('div');
 
 // STEP 3a: Create the asynchronous function populate()
 async function populate() {
@@ -36,37 +36,66 @@ function populateHeader(jsonObj) {
 function showTopFlavors(jsonObj) {
   // STEP 10c: Attache the JSON topFlavors object to a variable
   let topFlavors = jsonObj.topFlavors;
-  //let topFlavors = jsonObj.topFlavors;
-  // STEP 10d: Loop through the topFlavors object
-  for (let i = 0; i < topFlavors.length; i++) {
-    // STEP 10e: build HTML elements for the content
-    let article = document.createElement('article');
-    let h2 = document.createElement('h2');
-    let image = document.createElement('img');
-    let ul = document.createElement('ul');
-
-    // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-    h2.textContent = topFlavors[i].name;
-    image.setAttribute(
-      'src',
-      'https://yurika-s.github.io/COMP1073/Lab-4/images/' +
-        topFlavors[i].image
-    );
-    // STEP 10g: Build a loop for the ingredients array in the JSON
-    let ingredients = topFlavors[i].ingredients;
-    for (let j = 0; j < ingredients.length; j++) {
-      let listItem = document.createElement('li');
-      listItem.textContent = ingredients[j];
-      ul.appendChild(listItem);
+  let types =[];
+  let flavorsByType = [];
+  // set all type name to tyes array
+  topFlavors.forEach(flavor => {
+    if(!types.includes(flavor.type)) {
+      types.push(flavor.type);
     }
-    // add the ingredient to the UL
-    // STEP 10h: Append each of the above HTML elements to the ARTICLE element
-    article.appendChild(h2);
-    article.appendChild(image);
-    article.appendChild(ul);
-    // STEP 10i: Append each complete ARTICLE element to the SECTION element
-    section.append(article);
-  }
+  });
+  // gather flavors by type
+  types.forEach((type,index) =>{
+    const result = topFlavors.filter( flavor => {
+      return flavor.type === type;
+    })
+    flavorsByType[index] = result;
+  });
+  // show flavors by their types
+  flavorsByType.forEach((flavors, index) =>{
+    let section = document.createElement('section');
+    let h2 = document.createElement('h2');
+    h2.textContent = types[index];
+    div.append(h2);
+    for(let i = 0; i < flavors.length; i++){
+      let article = document.createElement('article');
+      let h3 = document.createElement('h3');
+      let image = document.createElement('img');
+      let ul = document.createElement('ul');
+      let p = document.createElement('p');
+      let span = document.createElement('span');
+
+      // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
+      h3.textContent = flavors[i].name;
+      image.setAttribute(
+        'src',
+        'https://yurika-s.github.io/COMP1073/Lab-4/images/' + flavors[i].image
+      );
+      // add calories to p element and class to change its text color to red if the calories is less than 400
+      p.textContent = 'Calories: ';
+      span.textContent = flavors[i].calories;
+      if(flavors[i].calories < 400){
+        span.classList.add('red');
+      }
+      p.appendChild(span);
+      // STEP 10g: Build a loop for the ingredients array in the JSON
+      let ingredients = flavors[i].ingredients;
+      for (let j = 0; j < ingredients.length; j++) {
+        let listItem = document.createElement('li');
+        listItem.textContent = ingredients[j];
+        ul.appendChild(listItem);
+      }
+      // add the ingredient to the UL
+      // STEP 10h: Append each of the above HTML elements to the ARTICLE element
+      article.appendChild(h3);
+      article.appendChild(image);
+      article.appendChild(p);
+      article.appendChild(ul);
+      // STEP 10i: Append each complete ARTICLE element to the SECTION element
+      section.append(article);
+    };
+    div.append(section);
+  });
 }
 // STEP 11: The instructor will edit the JSON file - refresh your page to see the updated content
 
