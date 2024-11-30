@@ -1,0 +1,80 @@
+/* common */
+body {
+  font-family: sans-serif;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffd700;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+input {
+  padding: 0.4rem;
+  margin: 0 0.5rem;
+}
+button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #f99213;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e18515;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* container */
+.container {
+  padding: 2rem 3rem;
+}
+.container h1 + div {
+  width: 50%;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.main-image {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.main-image img {
+  max-height: 60vh;
+  margin: 0 auto;
+}
+
+.main-image + div input {
+  width: 50%;
+}
+.main-image + div p.hide {
+  display: none;
+}
+.main-image + div p.show {
+  display: block;
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.week-images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.week-images img {
+  cursor: pointer;
+}
+.week-images img.active {
+  border: 2px solid #fff;
+}
