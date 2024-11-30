@@ -1,4 +1,4 @@
-// NASA API Base URL
+// NASA API Base URL referred > https://api.nasa.gov/
 const apodBaseURL = 'https://api.nasa.gov/planetary/apod';
 // NASA API key
 const key = 'Wx2a3iSokQa0cEygrXQhcqgQSZMIAckriUbLhfAh';
@@ -39,24 +39,36 @@ async function getAstronomyPictures(date) {
     })
     .then((data) => {
       astronomyInfo = data;
-      displayImages(data);
+      astronomyInfo.forEach((item) => {
+        // set item's url no image url if its media type is not image (ex. video etc)
+        if (item.media_type !== 'image') {
+          item.url =
+            'https://placehold.jp/ccc/ffffff/750x600.png?text=No%20Image';
+        }
+      });
+      console.log(astronomyInfo);
+      displayImages();
     })
     .catch((error) => {
       resetImages(error);
     });
 }
 
-function displayImages(json) {
+function displayImages() {
   resetImages('');
   // set images retrieved through API
-  for (let i = 0; i < json.length; i++) {
+  for (let i = 0; i < astronomyInfo.length; i++) {
     const nth = i + 1;
-    const img = createImgElement(json[i].url, json[i].title, nth);
+    const img = createImgElement(
+      astronomyInfo[i].url,
+      astronomyInfo[i].title,
+      astronomyInfo[i].copyright,
+      nth
+    );
     weekImagesArea.appendChild(img);
 
     if (i === 5) {
-      const img = createImgElement(json[i].url, json[i].title);
-      mainImageArea.appendChild(img);
+      setMainInfo(i);
       document
         .querySelector(`.week-images img:nth-child(${nth})`)
         .classList.add('active');
@@ -65,26 +77,32 @@ function displayImages(json) {
 }
 
 // create image element to insert into the HTML
-function createImgElement(url, title, nth = 1) {
+function createImgElement(url, title, copyright, nth = 1) {
   const img = document.createElement('img');
   img.src = url;
   img.alt = title;
+  img.setAttribute('copyright', copyright);
   img.setAttribute('data-nth', nth);
   return img;
 }
 
-function setMainImage(index) {
+function setMainInfo(index) {
   mainImageArea.innerHTML = '';
+  const h2 = document.createElement('h2');
+  h2.textContent = astronomyInfo[index].title;
+  const p = document.createElement('p');
+  p.textContent = astronomyInfo[index].explanation;
   const img = createImgElement(
     astronomyInfo[index].url,
-    astronomyInfo[index].title
+    astronomyInfo[index].title,
+    astronomyInfo[index].copyright
   );
+  mainImageArea.appendChild(h2);
   mainImageArea.appendChild(img);
+  mainImageArea.appendChild(p);
 }
 
 function resetImages(errorMessage) {
-  // mainImage.src = 'https://placehold.jp/ccc/ffffff/750x600.png?text=No%20Image';
-  // mainImage.alt = 'No image';
   mainImageArea.innerHTML = '';
   weekImagesArea.innerHTML = '';
   errorParagraph.textContent = errorMessage;
@@ -100,13 +118,7 @@ document.querySelector('.week-images').addEventListener('click', (e) => {
       .classList.remove('active');
 
     // change main image attribute into the attribute of the image clicked
-    const mainImg = document.querySelector('.main-image img');
-    mainImg.src = e.target.src;
-    mainImg.alt = e.target.alt;
-    document
-      .querySelector(`.week-images img:nth-child(${nth})`)
-      .classList.add('active');
-    activeImageNth = nth;
+    setMainInfo(nth - 1);
   }
 });
 
