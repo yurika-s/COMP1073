@@ -12,6 +12,10 @@ h1 {
   margin-top: 0;
 }
 
+h2 {
+  color: #ede5e5;
+}
+
 input {
   padding: 0.4rem;
   margin: 0 0.5rem;
@@ -37,10 +41,12 @@ img {
 .container {
   padding: 2rem 3rem;
 }
+
+/* main image and input area */
 .container h1 + div {
   width: 50%;
   margin: 0 auto;
-  color: #fff;
+  color: #ede5e5;
 }
 
 .main-image {
@@ -51,6 +57,11 @@ img {
 .main-image img {
   max-height: 60vh;
   margin: 0 auto;
+}
+
+.main-image + div {
+  padding: 1rem 0;
+  border-top: solid 1px #ffd700;
 }
 
 .main-image + div input {
@@ -65,6 +76,7 @@ img {
   margin-top: 0.5rem;
 }
 
+/* week(sub) images area */
 .week-images {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
