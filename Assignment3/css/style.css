@@ -26,6 +26,7 @@ button:hover {
 }
 img {
   max-width: 100%;
+  color: #ede5e5;
 }
 table {
   border-spacing: 0;
@@ -55,12 +56,12 @@ td {
 
 /* main image and input area */
 .container h1 + div {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   color: #ede5e5;
+  text-align: center;
 }
 .main-image {
-  text-align: center;
   margin: 1rem 0;
   color: #ede5e5;
 }
@@ -68,27 +69,8 @@ td {
   max-height: 60vh;
   margin: 0 auto;
 }
-.main-image h2,
-p {
+.main-image p {
   text-align: left;
-}
-.main-image + div {
-  padding: 1rem 0;
-  text-align: right;
-}
-
-/* week(sub) images area */
-.week-images {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-.week-images img {
-  cursor: pointer;
-}
-.week-images img.active {
-  border: 2px solid #fff;
 }
 
 /* news list */
@@ -96,7 +78,7 @@ p {
   background-color: #f6f3f3;
   padding: 1rem 2rem;
   border-radius: 10px;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .news-list table a:link {
   color: #f99213;
