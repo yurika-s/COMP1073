@@ -11,6 +11,19 @@ Third-Party APIs
 URL:
 ### Attribution
 
+## Assignment 3
+Third-Party APIs  
+URL: https://lamp.computerstudi.es/~Yurika200558167/COMP1073/Assignment3/
+### Attribution
+- NASA API
+  - https://api.nasa.gov/
+- The NEWS API
+  - https://www.thenewsapi.com/documentation
+- Code reference
+  - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+  - https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+
 ## Lab 1
 Random Story Generator
 

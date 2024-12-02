@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 | Third-Party APIs</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>The Astronomy Picture of the Day Provided by NASA</h1>
+      <div>
+        <div>
+          <label for="date">Select Date: </label
+          ><input type="date" name="date" id="date" />
+        </div>
+        <div class="main-image"></div>
+        <div>
+          <button type="button">Search more</button>
+        </div>
+      </div>
+      <p class="error"></p>
+      <div class="news-list hide">
+        <h2>News List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>title</th>
+              <th>description</th>
+              <th>published date</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p class="hide">No article about the topic.</p>
+      </div>
+    </div>
+  </body>
+</html>
