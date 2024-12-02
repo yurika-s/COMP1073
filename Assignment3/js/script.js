@@ -9,13 +9,12 @@ const nasaKey = 'Wx2a3iSokQa0cEygrXQhcqgQSZMIAckriUbLhfAh';
 let astronomyInfo = {};
 
 /*
- ** NEWS API
+ ** The News API
  ** referred > https://newsapi.org/
  */
 const newsBaseURL =
-  'https://newsapi.org/v2/everything?from=20150101&sortBy=relevancy&language=en';
-const newsKey = 'dd52c0778b0e45a087da87d270407cef';
-
+  'https://api.thenewsapi.com/v1/news/top?language=en&categories=science';
+const newsKey = '8KazwDIpLzVNywgTrmucXbCSHwbQ9eTyH6onP2xm';
 // Grab HTML elements
 const container = document.querySelector('.container');
 const mainImageArea = document.querySelector('.main-image');
@@ -99,21 +98,18 @@ function displayInfo(json) {
 }
 
 function getNews(keyword) {
-  // full URL to access the NEWS API
-  const url = `${newsBaseURL}&apiKey=${newsKey}&q=${keyword}`;
+  // full URL to access The News API
+  const url = `${newsBaseURL}&api_token=${newsKey}&search=${keyword}`;
   fetch(url)
     .then((result) => {
       return result.json();
     })
-    .then((data) => {
-      if (data.status === 'ok') {
-        // filter data including author
-        const articles = data.articles.filter((item) => item.author !== null);
-        // limit the first 10 articles and display
-        displayNewsList(articles.slice(0, 10));
-      } else {
-        throw new Error(data.message);
+    .then((json) => {
+      console.log(json);
+      if ('error' in json) {
+        throw new Error(json.error.message);
       }
+      displayNewsList(json.data);
     })
     .catch((error) => {
       resetInfo(error);
@@ -137,7 +133,7 @@ function displayNewsList(data) {
       tr.innerHTML = `
       <td><a href="${article.url}" target="blank">${article.title}</a></td>
       <td>${article.description}</td>
-      <td>${new Date(article.publishedAt).toLocaleDateString(
+      <td>${new Date(article.published_at).toLocaleDateString(
         'en-US',
         dateOptions
       )}</td>
