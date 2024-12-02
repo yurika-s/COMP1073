@@ -105,7 +105,6 @@ function getNews(keyword) {
       return result.json();
     })
     .then((json) => {
-      console.log(json);
       if ('error' in json) {
         throw new Error(json.error.message);
       }
