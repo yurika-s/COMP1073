@@ -13,7 +13,7 @@ let astronomyInfo = {};
  ** referred > https://newsapi.org/
  */
 const newsBaseURL =
-  'https://api.thenewsapi.com/v1/news/top?language=en&categories=science';
+  'https://api.thenewsapi.com/v1/news/all?language=en&categories=science';
 const newsKey = '8KazwDIpLzVNywgTrmucXbCSHwbQ9eTyH6onP2xm';
 // Grab HTML elements
 const container = document.querySelector('.container');
