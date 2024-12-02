@@ -9,13 +9,16 @@ URL: https://lamp.computerstudi.es/~Yurika200558167/COMP1073/Assignment2/
 
 ## Assignment 3
 Third-Party APIs  
-URL:
+URL: https://lamp.computerstudi.es/~Yurika200558167/COMP1073/Assignment3/
 ### Attribution
-- NASA API document: https://api.nasa.gov/
-- Gmail API : https://developers.google.com/gmail/api/quickstart/js
-- Code refference
+- NASA API
+  - https://api.nasa.gov/
+- The NEWS API
+  - https://www.thenewsapi.com/documentation
+- Code reference
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
-  - https://stackoverflow.com/questions/21700364/adding-click-event-listener-to-elements-with-the-same-class
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+  - https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
 
 ## Lab 1
 Random Story Generator
